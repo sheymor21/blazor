@@ -17,26 +17,19 @@ h1{
    
     margin-top: 230px;
     color: antiquewhite;
-    background-color: rgb(98, 177, 144);
+    background: rgb(189, 18, 18);
 }
 
 header {
     width: 100%;
     overflow: hidden;
     color: antiquewhite;
-    background: rgb(98, 177, 144);
+    background: rgb(189, 18, 18);
     margin-bottom: 30px;
     position: relative;
     width: 100%;
 }
-.pHeader{
-  width: 100%;
-  overflow: hidden;
-  color: antiquewhite;
-  background: rgb(98, 177, 144);
-  margin-bottom: 30px;
-  position: relative
-}
+
 
 .wrapper {
     width: 90%;
@@ -69,15 +62,15 @@ header nav a:hover {
 .partidos{
     color: antiquewhite;
 }
-#registro {
-    margin-top: 50px;
-    margin-bottom: 120px;
-    margin-left: 550px;
-    margin-right: 550px;
-    padding: 20px;
-    border: 2px solid grey;
+.estilo{
+    margin-top: 5%;
+    margin-bottom: 7%;
+    margin-left: 35%;
+    margin-right:35%;
+    padding: 2%;
+    border: 2px solid rgb(231, 161, 161);
     border-radius: 5px;
-    box-shadow: 5px 10px #b7c3ca;
+    box-shadow: 5px 10px #df5050;
   }
 
   .inicio-session{
@@ -95,8 +88,11 @@ header nav a:hover {
     margin-right: auto;
     width: 30%;
   } 
-  .btn-grad {background-image: linear-gradient(to right, #56CCF2 0%, #2F80ED 51%, #56CCF2 100%)}
- 
+  .btn{
+    background-image: linear-gradient(to right, #569ff2 0%, #ed2fb4 51%, #f25656 100%)}
+  
+  .btn-grad {background-image: linear-gradient(to right, #569ff2 0%, #ed2fb4 51%, #f25656 100%)}
+   
 .btn-grad:hover { background-position: right center; };
 /* Style all font awesome icons */
 .fa {
