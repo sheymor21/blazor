@@ -1,0 +1,9 @@
+C:\Users\josea\source\repos\trabajo\trabajo\bin\Debug\trabajo.exe.config
+C:\Users\josea\source\repos\trabajo\trabajo\bin\Debug\trabajo.exe
+C:\Users\josea\source\repos\trabajo\trabajo\bin\Debug\trabajo.pdb
+C:\Users\josea\source\repos\trabajo\trabajo\bin\Debug\Microsoft.OData.Edm.dll
+C:\Users\josea\source\repos\trabajo\trabajo\bin\Debug\Microsoft.OData.Edm.xml
+C:\Users\josea\source\repos\trabajo\trabajo\obj\Debug\trabajo.csproj.CopyComplete
+C:\Users\josea\source\repos\trabajo\trabajo\obj\Debug\trabajo.exe
+C:\Users\josea\source\repos\trabajo\trabajo\obj\Debug\trabajo.pdb
+C:\Users\josea\source\repos\trabajo\trabajo\obj\Debug\trabajo.csprojAssemblyReference.cache
