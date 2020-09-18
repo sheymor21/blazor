@@ -1,5 +1,9 @@
-img{
-  width: 110%;
-  height: auto;
-  margin-top: 5%;
+#init{
+    margin-left: 18%;
+    margin-right: 2%;
+}
+
+#imt{
+    width: 7%;
+    border-style: solid;
 }
