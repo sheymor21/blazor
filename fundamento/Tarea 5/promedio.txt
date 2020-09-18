@@ -1,0 +1,13 @@
+Programa que acepte 4 notas y calcule el promedio.
+
+"inicio"
+"crear el documento"
+"modificarlo para que sea archivo .cs"
+"abrir con programa para programar en c#"
+"digitar la estrutuctura del programa"
+"declarar las cuatro variables"
+"se coloca el calculo matematico"
+"copilar el programa"
+"ejecutarlo"
+"digitar el valor de las variables"
+"fin"

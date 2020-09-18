@@ -1,0 +1,14 @@
+Programa que acepte un nota, muestre el EQ de la misma (A, B, C o F)
+
+"inicio"
+"crear el documento"
+"modificarlo para que sea archivo .cs"
+"abrir con programa para programar en c#"
+"digitar la estrutuctura del programa"
+"declarar las dos variables"
+"se coloca la decision"
+"colocar las condiciones de la decision"
+"copilar el programa"
+"ejecutarlo"
+"digitar el valor de la variable"
+"fin"

@@ -1,0 +1,15 @@
+Programa que acepta un numero y determina si el numero es par
+
+"inicio"
+"crear el documento"
+"modificarlo para que sea archivo .cs"
+"abrir con programa para programar en c#"
+"digitar la estrutuctura del programa"
+"declara la variables"
+"se coloca la decision"
+"colocar como condicion (a % 2 == 0)"
+"colocar respuestas segun la condicion"
+"copilar el programa"
+"ejecutarlo"
+"digitar el valor de la variable"
+"fin"

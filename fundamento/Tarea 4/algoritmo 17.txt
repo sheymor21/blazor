@@ -1,0 +1,15 @@
+algoritmo que acepte la fecha de nacimiento de una persona, e indique la edad e la misma.
+
+"inicio"
+"crear el documento"
+"modificarlo para que sea archivo .cs"
+"abrir con programa para programar en c#"
+"digitar la estrutuctura del programa"
+"declarar la variable"
+"utilizar Length al momento de asignar la aparicion de la variable en la linea de comandos"
+"copilar el programa"
+"ejecutar"
+"introducir frase"
+"fin"
+
+

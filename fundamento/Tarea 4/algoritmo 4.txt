@@ -1,0 +1,13 @@
+algoritmo para Aceptar el valor de dos catetos y mostrar la hipotenusa. 
+
+"inicio"
+"crear el documento"
+"modificarlo para que sea archivo .cs"
+"abrir con programa para programar en c#"
+"digitar la estrutuctura del programa"
+"declarar las variables"
+"digitar la ecuacion del teorema de pitagoras buscando la hipotenusa"
+"copilar el programa"
+"ejecutar"
+"ingresar valores"
+"fin"
