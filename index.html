@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <title>Agenda de contactos</title>
+  </head>
+  <body>
+    <!--agregar-->
+    <h1 class="text-center">Agenda de contactos</h1>
+    <div class="container py-5" id="agregcontainer">
+      <div class="row">
+          <div class="col-4">
+            <div class="card border-secondary mb-3" style="max-width: 18rem;">
+              <div class="card-header">Intrucciones De Editado</div>
+              <div class="card-body text-secondary">
+                <h5 class="card-title">Forma de uso</h5>
+                <p class="card-text">Se coloca lo que se quiera editar en los input de abajo y se selecciona el contacto a editar, si solo quiere editar un campo escribalo y deje los demas vacios, importante: se coloca primero la informacion y luego se selecciona.</p>
+              </div>
+            </div>
+          </div>     
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
+              </div>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="InputNombre">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Apellido</span>
+              </div>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="InputApellido">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Telefono</span>
+              </div>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Ej: 8097321235" id="InputTelefono">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">Tipo de contacto</label>
+              </div>
+              <select class="custom-select" id="ContactoType">
+                <option selected></option>
+                <option >Laboral</option>
+                <option >Personal</option>
+                <option >Academico</option>
+              </select>
+            </div>
+            <button type="button" class="btn btn-success" onclick="validacion()">Registrar</button>
+          </div>  
+          </div>  
+          </div>  
+          <div class="col-4"></div>  
+      </div>
+  </div>
+
+    <!--card-->
+    <h1 class="text-center">Contactos</h1>
+    <!--input-->
+    <div class="container">
+      <div class="row">
+        <div class="col-3">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <button type="button" class="btn btn-outline-warning mr-3" onclick="limpiar()">Limpieza</button>
+              <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Example text with button addon" aria-describedby="button-addon1" id="edinombre">
+          </div>
+      </div>
+      <div class="col-3">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Apellido</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="ediapellido">
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Telefono</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="editelefono">
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Tipo de contacto</label>
+          </div>
+          <select class="custom-select" id="ContactoTipo">
+            <option selected></option>
+            <option >Laboral</option>
+            <option >Personal</option>
+            <option >Academico</option>
+          </select>
+        </div>
+        
+      </div>
+    </div>
+    
+    <!--card-->
+    <div class="container py-5" id="containercard">
+      <div class="row" id="rowCard">
+      </div>
+    </div>
+  
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+   <script src="js/bootstrap.min.js"></script>
+   <script src="js/Configuracion.js"></script>
+  </body>
+</html>
