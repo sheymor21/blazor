@@ -1,0 +1,67 @@
+@page "/menu"
+@inject NavigationManager navi
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <img src="../img/foto.jpg" alt="no hay" srcset="" style="width: 4%;">
+    <p>nombre</p>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" @onclick="cerrar">Cerrar sesion <span
+                        class="sr-only"></span></a>
+                </li>
+
+            </ul>
+
+        </ul>
+    </div>
+</nav>
+
+<div class="container" style="margin-top: 10%;">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-4">
+            <button type="button" class="btn btn-primary btn-block" @onclick="RedirectAdd">Agregar nuevos
+                integrantes</button>
+            <button type="button" class="btn btn-info btn-block" @onclick="RedirectConsult">Consultar y visualizar
+                integrantes</button>
+            <button type="button" class="btn btn-secondary btn-block" @onclick="RedirectUpdate">Actualizar datos de
+                integrantes</button>
+            <button type="button" class="btn btn-danger btn-block" @onclick="RedirectDelete">Eliminar
+                integrantes</button>
+        </div>
+        <div class="col"></div>
+        <div class="col"></div>
+    </div>
+</div>
+
+
+@code
+{
+     private void RedirectAdd()
+    {
+        navi.NavigateTo("add");
+    }
+
+    private void RedirectDelete()
+    {
+        navi.NavigateTo("delete");
+    }
+
+    private void RedirectConsult()
+    {
+        navi.NavigateTo("consult");
+    }
+
+    private void RedirectUpdate()
+    {
+        navi.NavigateTo("update");
+    }
+
+     private void cerrar()
+    {
+        navi.NavigateTo("/");
+    }
+}

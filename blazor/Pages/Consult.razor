@@ -1,0 +1,205 @@
+@page "/consult"
+@inject NavigationManager navi
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <img src="../img/foto.jpg" alt="no hay" srcset="" style="width: 4%;">
+    <p>nombre</p>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" @onclick="cerrar">Cerrar sesion <span
+                        class="sr-only"></span></a>
+                </li>
+
+            </ul>
+
+        </ul>
+    </div>
+</nav>
+
+<div class="row mb-1">
+    <div class="col-3">
+        <div class="input-group ">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="addon-wrapping">Buscar</span>
+            </div>
+            <input type="text" class="form-control" placeholder="" aria-label="Username"
+                aria-describedby="addon-wrapping" @bind-value="explorador">
+        </div>
+    </div>
+    <div class="col-3">
+        <button type="button" class="btn btn-outline-primary" @onclick="buscar">Buscar</button>
+        <button type="button" class="btn btn-outline-secondary ml-4" @onclick="back">Volver al menu</button>
+    </div>
+    <div class="col-6">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" @onclick="f.pnombre">
+            <label class="form-check-label" for="inlineRadio1">Por Nombre</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" @onclick="f.pdenominacion">
+            <label class="form-check-label" for="inlineRadio2">Por Denominacion</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" @onclick="f.pid">
+            <label class="form-check-label" for="inlineRadio3">Por ID</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4" @onclick="f.ppais">
+            <label class="form-check-label" for="inlineRadio4">Por Pais de residencia</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5" @onclick="f.pciudad">
+            <label class="form-check-label" for="inlineRadio5">Por Ciudad de residencia</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="option6" @onclick="f.piglesia">
+            <label class="form-check-label" for="inlineRadio6">Por iglesia</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value="option6" @onclick="todos">
+            <label class="form-check-label" for="inlineRadio7">Todos</label>
+        </div>
+    </div>
+</div>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre completo</th>
+            <th scope="col">Sexo</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Nombre de la iglesia</th>
+            <th scope="col">Denominacion</th>
+            <th scope="col">Pais de residencia</th>
+            <th scope="col">Ciudad de residencia</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if(!cambio)
+        {
+
+        @foreach (var item in lista)
+        {
+            <tr>
+                <th scope="row">@item.integranteId</th>
+                <td>@item.Nombre @item.Apellido</td>
+                <td>@item.Sexo</td>
+                <td>@item.Correo</td>
+                @foreach (var item2 in listaR)
+                {
+                    <td>@item2.Nombre_iglesiaA</td>
+                    <td>@item2.Denominacion_religiosa</td>
+                }
+                <td>@item.Pais_residencia</td>
+                <td>@item.Ciudad_residencia</td>
+            </tr>
+            
+        }
+        }
+        else
+        {
+            
+        }
+    </tbody>
+</table>
+
+
+@code
+{
+    string explorador { get; set; }
+
+    bool cambio = false;
+    iglesiaContext db = new iglesiaContext();
+
+    List<Integrante> lista = new List<Integrante>();
+    List<Datos_eclesiasticos> listaR = new List<Datos_eclesiasticos>();
+
+    filtros f = new filtros();
+
+    private void back()
+    {
+        navi.NavigateTo("/menu");
+    }
+
+    private void buscar()
+    {
+        lista = new List<Integrante>();
+        listaR = new List<Datos_eclesiasticos>();
+
+        if(f.Pnombre)
+        {
+            foreach(var item in  db.integrantes.OrderBy(b => b.integranteId).ToList())
+            {
+                if(explorador == item.Nombre)
+                {
+                    lista.Add(item);
+                    Console.Write(item.Nombre);
+                }
+            }
+        }
+        else if(f.Piglesia)
+        {
+            foreach(var item in  db.Datos_Eclesiasticos.OrderBy(b => b.integranteId).ToList())
+            {
+                if(explorador == item.Nombre_iglesiaA)
+                {
+                    listaR.Add(item);
+                }
+            }
+        }
+        else if(f.Pdenominacion)
+        {
+            foreach(var item in  db.Datos_Eclesiasticos.OrderBy(b => b.integranteId).ToList())
+            {
+                if(explorador == item.Denominacion_religiosa)
+                {
+                    listaR.Add(item);
+                }
+            }
+        }
+        else if(f.Pciudad)
+        {
+            foreach(var item in  db.integrantes.OrderBy(b => b.integranteId).ToList())
+            {
+                if(explorador == item.Ciudad_residencia)
+                {
+                    lista.Add(item);
+                }
+            }
+        }
+        else if(f.Ppais)
+        {
+            foreach(var item in  db.integrantes.OrderBy(b => b.integranteId).ToList())
+            {
+                if(explorador == item.Pais_residencia)
+                {
+                    lista.Add(item);
+                }
+            }
+        }
+        else if(f.Pid)
+        {
+            foreach(var item in  db.integrantes.OrderBy(b => b.integranteId).ToList())
+            {
+                if(explorador == item.integranteId.ToString())
+                {
+                    lista.Add(item);
+                }
+            }
+        }
+
+
+    }
+
+    private void todos()
+    {
+        lista = db.integrantes.OrderBy(b=>b.integranteId).ToList();
+        listaR = db.Datos_Eclesiasticos.OrderBy(b=>b.integranteId).ToList();
+    }
+
+    private void cerrar()
+    {
+        navi.NavigateTo("/");
+    }
+}

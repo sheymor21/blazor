@@ -1,0 +1,1217 @@
+@page "/add"
+@inject NavigationManager navi
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <img src="../img/foto.jpg" alt="no hay" srcset="" style="width: 4%;">
+    <p>nombre</p>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" @onclick="cerrar">Cerrar sesion <span
+                        class="sr-only"></span></a>
+                </li>
+
+            </ul>
+
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    @if(cambio == 1)
+    {
+    <h2>Datos Personales</h2>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label for="">Nombre</label>
+                <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" @bind-value="g.Nombre">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="">Apellido</label>
+                <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" @bind-value="g.Apellido">
+            </div>
+        </div>
+    </div>
+    <div>
+
+        <label for="">Sexo: </label>
+       <div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="sexoradio" id="exampleRadios1" @onclick="sexoH">
+            <label class="form-check-label" for="exampleRadios1">
+                Hombre
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="sexoradio" id="exampleRadios2" @onclick="sexoF">
+            <label class="form-check-label" for="exampleRadios2">
+                Mujer
+            </label>
+        </div>
+    </div>
+    </div>
+
+    <div class="form-groupmt-5">
+        <label for="" class="mt-3">Fecha de nacimiento</label>
+        <input type="date" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" @bind-value="g.Fecha_nacimiento">
+    </div>
+
+    
+    <div class="form-group">
+        <label for="" class="mt-3">Pais de nacimiento</label>
+        <select class="form-control" name="" id="" @bind="g.Pais_nacimiento">
+            <option selected>Elija</option>
+            <option>Afganistán</option>
+            <option>Albania</option>
+            <option>Alemania</option>
+            <option>Andorra</option>
+            <option>Angola</option>
+            <option>Anguilla</option>
+            <option>Antártida</option>
+            <option>Antigua y Barbuda</option>
+            <option>Antillas Holandesas</option>
+            <option>Arabia Saudí</option>
+            <option>Argelia</option>
+            <option>Argentina</option>
+            <option>Armenia</option>
+            <option>Aruba</option>
+            <option>Australia</option>
+            <option>Austria</option>
+            <option>Azerbaiyán</option>
+            <option>Bahamas</option>
+            <option>Bahrein</option>
+            <option>Bangladesh</option>
+            <option>Barbados</option>
+            <option>Bélgica</option>
+            <option>Belice</option>
+            <option>Benin</option>
+            <option>Bermudas</option>
+            <option>Bielorrusia</option>
+            <option>Birmania</option>
+            <option>Bolivia</option>
+            <option>Bosnia y Herzegovina</option>
+            <option>Botswana</option>
+            <option>Brasil</option>
+            <option>Brunei</option>
+            <option>Bulgaria</option>
+            <option>Burkina Faso</option>
+            <option>Burundi</option>
+            <option>Bután</option>
+            <option>Cabo Verde</option>
+            <option>Camboya</option>
+            <option>Camerún</option>
+            <option>Canadá</option>
+            <option>Chad</option>
+            <option>Chile</option>
+            <option>China</option>
+            <option>Chipre</option>
+            <option>Ciudad del Vaticano (Santa Sede)</option>
+            <option>Colombia</option>
+            <option>Comores</option>
+            <option>Congo</option>
+            <option>Congo, República Democrática del</option>
+            <option>Corea</option>
+            <option>Corea del Norte</option>
+            <option>Costa de Marfíl</option>
+            <option>Costa Rica</option>
+            <option>Croacia (Hrvatska)</option>
+            <option>Cuba</option>
+            <option>Dinamarca</option>
+            <option>Djibouti</option>
+            <option>Dominica</option>
+            <option>Ecuador</option>
+            <option>Egipto</option>
+            <option>El Salvador</option>
+            <option>Emiratos Árabes Unidos</option>
+            <option>Eritrea</option>
+            <option>Eslovenia</option>
+            <option>España</option>
+            <option>Estados Unidos</option>
+            <option>Estonia</option>
+            <option>Etiopía</option>
+            <option>Fiji</option>
+            <option>Filipinas</option>
+            <option>Finlandia</option>
+            <option>Francia</option>
+            <option>Gabón</option>
+            <option>Gambia</option>
+            <option>Georgia</option>
+            <option>Ghana</option>
+            <option>Gibraltar</option>
+            <option>Granada</option>
+            <option>Grecia</option>
+            <option>Groenlandia</option>
+            <option>Guadalupe</option>
+            <option>Guam</option>
+            <option>Guatemala</option>
+            <option>Guayana</option>
+            <option>Guayana Francesa</option>
+            <option>Guinea</option>
+            <option>Guinea Ecuatorial</option>
+            <option>Guinea-Bissau</option>
+            <option>Haití</option>
+            <option>Honduras</option>
+            <option>Hungría</option>
+            <option>India</option>
+            <option>Indonesia</option>
+            <option>Irak</option>
+            <option>Irán</option>
+            <option>Irlanda</option>
+            <option>Isla Bouvet</option>
+            <option>Isla de Christmas</option>
+            <option>Islandia</option>
+            <option>Islas Caimán</option>
+            <option>Islas Cook</option>
+            <option>Islas de Cocos o Keeling</option>
+            <option>Islas Faroe</option>
+            <option>Islas Heard y McDonald</option>
+            <option>Islas Malvinas</option>
+            <option>Islas Marianas del Norte</option>
+            <option>Islas Marshall</option>
+            <option>Islas menores de Estados Unidos</option>
+            <option>Islas Palau</option>
+            <option>Islas Salomón</option>
+            <option>Islas Svalbard y Jan Mayen</option>
+            <option>Islas Tokelau</option>
+            <option>Islas Turks y Caicos</option>
+            <option>Islas Vírgenes (EEUU)</option>
+            <option>Islas Vírgenes (Reino Unido)</option>
+            <option>Islas Wallis y Futuna</option>
+            <option>Israel</option>
+            <option>Italia</option>
+            <option>Jamaica</option>
+            <option>Japón</option>
+            <option>Jordania</option>
+            <option>Kazajistán</option>
+            <option>Kenia</option>
+            <option>Kirguizistán</option>
+            <option>Kiribati</option>
+            <option>Kuwait</option>
+            <option>Laos</option>
+            <option>Lesotho</option>
+            <option>Letonia</option>
+            <option>Líbano</option>
+            <option>Liberia</option>
+            <option>Libia</option>
+            <option>Liechtenstein</option>
+            <option>Lituania</option>
+            <option>Luxemburgo</option>
+            <option>Macedonia, Ex-República Yugoslava de</option>
+            <option>Madagascar</option>
+            <option>Malasia</option>
+            <option>Malawi</option>
+            <option>Maldivas</option>
+            <option>Malí</option>
+            <option>Malta</option>
+            <option>Marruecos</option>
+            <option>Martinica</option>
+            <option>Mauricio</option>
+            <option>Mauritania</option>
+            <option>Mayotte</option>
+            <option>México</option>
+            <option>Micronesia</option>
+            <option>Moldavia</option>
+            <option>Mónaco</option>
+            <option>Mongolia</option>
+            <option>Montserrat</option>
+            <option>Mozambique</option>
+            <option>Namibia</option>
+            <option>Nauru</option>
+            <option>Nepal</option>
+            <option>Nicaragua</option>
+            <option>Níger</option>
+            <option>Nigeria</option>
+            <option>Niue</option>
+            <option>Norfolk</option>
+            <option>Noruega</option>
+            <option>Nueva Caledonia</option>
+            <option>Nueva Zelanda</option>
+            <option>Omán</option>
+            <option>Países Bajos</option>
+            <option>Panamá</option>
+            <option>Papúa Nueva Guinea</option>
+            <option>Paquistán</option>
+            <option>Paraguay</option>
+            <option>Perú</option>
+            <option>Pitcairn</option>
+            <option>Polinesia Francesa</option>
+            <option>Polonia</option>
+            <option>Portugal</option>
+            <option>Puerto Rico</option>
+            <option>Qatar</option>
+            <option>Reino Unido</option>
+            <option>República Centroafricana</option>
+            <option>República Checa</option>
+            <option>República de Sudáfrica</option>
+            <option>República Dominicana</option>
+            <option>República Eslovaca</option>
+            <option>Reunión</option>
+            <option>Ruanda</option>
+            <option>Rumania</option>
+            <option>Rusia</option>
+            <option>Sahara Occidental</option>
+            <option>Saint Kitts y Nevis</option>
+            <option>Samoa</option>
+            <option>Samoa Americana</option>
+            <option>San Marino</option>
+            <option>San Vicente y Granadinas</option>
+            <option>Santa Helena</option>
+            <option>Santa Lucía</option>
+            <option>Santo Tomé y Príncipe</option>
+            <option>Senegal</option>
+            <option>Seychelles</option>
+            <option>Sierra Leona</option>
+            <option>Singapur</option>
+            <option>Siria</option>
+            <option>Somalia</option>
+            <option>Sri Lanka</option>
+            <option>St Pierre y Miquelon</option>
+            <option>Suazilandia</option>
+            <option>Sudán</option>
+            <option>Suecia</option>
+            <option>Suiza</option>
+            <option>Surinam</option>
+            <option>Tailandia</option>
+            <option>Taiwán</option>
+            <option>Tanzania</option>
+            <option>Tayikistán</option>
+            <option>Territorios franceses del Sur</option>
+            <option>Timor Oriental</option>
+            <option>Togo</option>
+            <option>Tonga</option>
+            <option>Trinidad y Tobago</option>
+            <option>Túnez</option>
+            <option>Turkmenistán</option>
+            <option>Turquía</option>
+            <option>Tuvalu</option>
+            <option>Ucrania</option>
+            <option>Uganda</option>
+            <option>Uruguay</option>
+            <option>Uzbekistán</option>
+            <option>Vanuatu</option>
+            <option>Venezuela</option>
+            <option>Vietnam</option>
+            <option>Yemen</option>
+            <option>Yugoslavia</option>
+            <option>Zambia</option>
+            <option>Zimbabue</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="">Ciudad de nacimiento</label>
+        <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" @bind-value="g.Ciudad_nacimiento">
+    </div>
+
+    <div class="form-group">
+        <label for="" class="mt-2">Pais de residencia actual</label>
+        <select class="form-control" name="" id="" @bind="g.Pais_residencia">
+            <option selected>Elija</option>
+            <option>Afganistán</option>
+            <option>Albania</option>
+            <option>Alemania</option>
+            <option>Andorra</option>
+            <option>Angola</option>
+            <option>Anguilla</option>
+            <option>Antártida</option>
+            <option>Antigua y Barbuda</option>
+            <option>Antillas Holandesas</option>
+            <option>Arabia Saudí</option>
+            <option>Argelia</option>
+            <option>Argentina</option>
+            <option>Armenia</option>
+            <option>Aruba</option>
+            <option>Australia</option>
+            <option>Austria</option>
+            <option>Azerbaiyán</option>
+            <option>Bahamas</option>
+            <option>Bahrein</option>
+            <option>Bangladesh</option>
+            <option>Barbados</option>
+            <option>Bélgica</option>
+            <option>Belice</option>
+            <option>Benin</option>
+            <option>Bermudas</option>
+            <option>Bielorrusia</option>
+            <option>Birmania</option>
+            <option>Bolivia</option>
+            <option>Bosnia y Herzegovina</option>
+            <option>Botswana</option>
+            <option>Brasil</option>
+            <option>Brunei</option>
+            <option>Bulgaria</option>
+            <option>Burkina Faso</option>
+            <option>Burundi</option>
+            <option>Bután</option>
+            <option>Cabo Verde</option>
+            <option>Camboya</option>
+            <option>Camerún</option>
+            <option>Canadá</option>
+            <option>Chad</option>
+            <option>Chile</option>
+            <option>China</option>
+            <option>Chipre</option>
+            <option>Ciudad del Vaticano (Santa Sede)</option>
+            <option>Colombia</option>
+            <option>Comores</option>
+            <option>Congo</option>
+            <option>Congo, República Democrática del</option>
+            <option>Corea</option>
+            <option>Corea del Norte</option>
+            <option>Costa de Marfíl</option>
+            <option>Costa Rica</option>
+            <option>Croacia (Hrvatska)</option>
+            <option>Cuba</option>
+            <option>Dinamarca</option>
+            <option>Djibouti</option>
+            <option>Dominica</option>
+            <option>Ecuador</option>
+            <option>Egipto</option>
+            <option>El Salvador</option>
+            <option>Emiratos Árabes Unidos</option>
+            <option>Eritrea</option>
+            <option>Eslovenia</option>
+            <option>España</option>
+            <option>Estados Unidos</option>
+            <option>Estonia</option>
+            <option>Etiopía</option>
+            <option>Fiji</option>
+            <option>Filipinas</option>
+            <option>Finlandia</option>
+            <option>Francia</option>
+            <option>Gabón</option>
+            <option>Gambia</option>
+            <option>Georgia</option>
+            <option>Ghana</option>
+            <option>Gibraltar</option>
+            <option>Granada</option>
+            <option>Grecia</option>
+            <option>Groenlandia</option>
+            <option>Guadalupe</option>
+            <option>Guam</option>
+            <option>Guatemala</option>
+            <option>Guayana</option>
+            <option>Guayana Francesa</option>
+            <option>Guinea</option>
+            <option>Guinea Ecuatorial</option>
+            <option>Guinea-Bissau</option>
+            <option>Haití</option>
+            <option>Honduras</option>
+            <option>Hungría</option>
+            <option>India</option>
+            <option>Indonesia</option>
+            <option>Irak</option>
+            <option>Irán</option>
+            <option>Irlanda</option>
+            <option>Isla Bouvet</option>
+            <option>Isla de Christmas</option>
+            <option>Islandia</option>
+            <option>Islas Caimán</option>
+            <option>Islas Cook</option>
+            <option>Islas de Cocos o Keeling</option>
+            <option>Islas Faroe</option>
+            <option>Islas Heard y McDonald</option>
+            <option>Islas Malvinas</option>
+            <option>Islas Marianas del Norte</option>
+            <option>Islas Marshall</option>
+            <option>Islas menores de Estados Unidos</option>
+            <option>Islas Palau</option>
+            <option>Islas Salomón</option>
+            <option>Islas Svalbard y Jan Mayen</option>
+            <option>Islas Tokelau</option>
+            <option>Islas Turks y Caicos</option>
+            <option>Islas Vírgenes (EEUU)</option>
+            <option>Islas Vírgenes (Reino Unido)</option>
+            <option>Islas Wallis y Futuna</option>
+            <option>Israel</option>
+            <option>Italia</option>
+            <option>Jamaica</option>
+            <option>Japón</option>
+            <option>Jordania</option>
+            <option>Kazajistán</option>
+            <option>Kenia</option>
+            <option>Kirguizistán</option>
+            <option>Kiribati</option>
+            <option>Kuwait</option>
+            <option>Laos</option>
+            <option>Lesotho</option>
+            <option>Letonia</option>
+            <option>Líbano</option>
+            <option>Liberia</option>
+            <option>Libia</option>
+            <option>Liechtenstein</option>
+            <option>Lituania</option>
+            <option>Luxemburgo</option>
+            <option>Macedonia, Ex-República Yugoslava de</option>
+            <option>Madagascar</option>
+            <option>Malasia</option>
+            <option>Malawi</option>
+            <option>Maldivas</option>
+            <option>Malí</option>
+            <option>Malta</option>
+            <option>Marruecos</option>
+            <option>Martinica</option>
+            <option>Mauricio</option>
+            <option>Mauritania</option>
+            <option>Mayotte</option>
+            <option>México</option>
+            <option>Micronesia</option>
+            <option>Moldavia</option>
+            <option>Mónaco</option>
+            <option>Mongolia</option>
+            <option>Montserrat</option>
+            <option>Mozambique</option>
+            <option>Namibia</option>
+            <option>Nauru</option>
+            <option>Nepal</option>
+            <option>Nicaragua</option>
+            <option>Níger</option>
+            <option>Nigeria</option>
+            <option>Niue</option>
+            <option>Norfolk</option>
+            <option>Noruega</option>
+            <option>Nueva Caledonia</option>
+            <option>Nueva Zelanda</option>
+            <option>Omán</option>
+            <option>Países Bajos</option>
+            <option>Panamá</option>
+            <option>Papúa Nueva Guinea</option>
+            <option>Paquistán</option>
+            <option>Paraguay</option>
+            <option>Perú</option>
+            <option>Pitcairn</option>
+            <option>Polinesia Francesa</option>
+            <option>Polonia</option>
+            <option>Portugal</option>
+            <option>Puerto Rico</option>
+            <option>Qatar</option>
+            <option>Reino Unido</option>
+            <option>República Centroafricana</option>
+            <option>República Checa</option>
+            <option>República de Sudáfrica</option>
+            <option>República Dominicana</option>
+            <option>República Eslovaca</option>
+            <option>Reunión</option>
+            <option>Ruanda</option>
+            <option>Rumania</option>
+            <option>Rusia</option>
+            <option>Sahara Occidental</option>
+            <option>Saint Kitts y Nevis</option>
+            <option>Samoa</option>
+            <option>Samoa Americana</option>
+            <option>San Marino</option>
+            <option>San Vicente y Granadinas</option>
+            <option>Santa Helena</option>
+            <option>Santa Lucía</option>
+            <option>Santo Tomé y Príncipe</option>
+            <option>Senegal</option>
+            <option>Seychelles</option>
+            <option>Sierra Leona</option>
+            <option>Singapur</option>
+            <option>Siria</option>
+            <option>Somalia</option>
+            <option>Sri Lanka</option>
+            <option>St Pierre y Miquelon</option>
+            <option>Suazilandia</option>
+            <option>Sudán</option>
+            <option>Suecia</option>
+            <option>Suiza</option>
+            <option>Surinam</option>
+            <option>Tailandia</option>
+            <option>Taiwán</option>
+            <option>Tanzania</option>
+            <option>Tayikistán</option>
+            <option>Territorios franceses del Sur</option>
+            <option>Timor Oriental</option>
+            <option>Togo</option>
+            <option>Tonga</option>
+            <option>Trinidad y Tobago</option>
+            <option>Túnez</option>
+            <option>Turkmenistán</option>
+            <option>Turquía</option>
+            <option>Tuvalu</option>
+            <option>Ucrania</option>
+            <option>Uganda</option>
+            <option>Uruguay</option>
+            <option>Uzbekistán</option>
+            <option>Vanuatu</option>
+            <option>Venezuela</option>
+            <option>Vietnam</option>
+            <option>Yemen</option>
+            <option>Yugoslavia</option>
+            <option>Zambia</option>
+            <option>Zimbabue</option>
+        </select>
+    </div>
+    
+    <button type="button" class="btn btn-secondary" @onclick="backmenu">Regresar al menu</button>
+    <button type="button" class="btn btn-primary" @onclick="siguiente">Siguiente</button>
+    }
+
+@if(cambio == 2)
+{
+
+    <div class="form-group">
+        <label for="">Ciudad de residencia actual</label>
+        <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" @bind-value="g.Ciudad_residencia">
+    </div>
+    <div class="form-group">
+        <label for="">Direccion</label>
+        <textarea class="form-control" name="" id="" rows="3" @bind="g.Direccion"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="">Telefono</label>
+        <input type="number" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" @bind-value="g.Telefono">
+    </div>
+    <div class="form-group">
+        <label for="">Celular</label>
+        <input type="number" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" @bind-value="g.Celular">
+    </div>
+    <div class="form-group">
+        <label for="">Correo electronico</label>
+        <input type="email" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" @bind-value="g.Correo">
+    </div>
+    <label for="">Tipo de Documento de identidad: </label>
+
+        <div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="docuradio" id="exampleRadios3" @onclick="docuC">
+            <label class="form-check-label" for="exampleRadios3">
+                Cedula
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="docuradio" id="exampleRadios4" @onclick="docuP">
+            <label class="form-check-label" for="exampleRadios4">
+                Pasaporte
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="docuradio" id="exampleRadios5" @onclick="docuD">
+            <label class="form-check-label" for="exampleRadios5">
+                DNI
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="" class="mt-3">Documento de identidad</label>
+        <input type="email" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" @bind-value="g.Documento">
+    </div>
+
+    <button type="button" class="btn btn-secondary" @onclick="back">Volver</button>
+    <button type="button" class="btn btn-primary" @onclick="siguiente">Siguiente</button>
+}
+
+@if(cambio == 3)
+{
+    
+    <h2>Datos Familiares</h2>
+    <div>
+        <label for="">Estado civil: </label>
+        <div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="estadoradio" id="exampleRadios6" @onclick="EstadoCF">
+            <label class="form-check-label" for="exampleRadios6">
+                Soltero
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="estadoradio" id="exampleRadios7" @onclick="EstadoCT">
+            <label class="form-check-label" for="exampleRadios7">
+                Casado
+            </label>
+        </div>
+    </div>
+    </div>
+
+    @if(T.casado == true && T.casado2 == false)
+    {
+
+    <div class="form-group">
+        <label for="">Nombre de esposo/a</label>
+        <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" @bind-value="g.Pareja">
+    </div>
+    }
+    <div>
+
+    <label for="">Hijos: </label>
+       <div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="hijosradio" id="exampleRadios8" @onclick="HijosT">
+            <label class="form-check-label" for="exampleRadios8">
+                Si
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="hijosradio" id="exampleRadios9" @onclick="HijosF">
+            <label class="form-check-label" for="exampleRadios9">
+                No
+            </label>
+        </div>
+    </div>
+    </div>
+
+    @if(T.hijos == true && T.hijos2 == false)
+    {
+
+    <div class="form-group">
+        <label for="" class="mt-2">Numeros de hijos</label>
+        <input type="number" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" @bind-value="g.N_hijos">
+    </div>
+    }
+
+    <h2>Datos Laborales</h2>
+
+    <div class="form-group">
+        <label for="">Profesion</label>
+        <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" @bind-value="g.Profesion">
+    </div>
+
+    <div class="form-group">
+        <label for="">Nombre de la empresa o negocio</label>
+        <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" @bind-value="g.Empresa_nombre">
+    </div>
+
+    <div class="form-group">
+        <label for="">Ocupacion actual</label>
+        <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" @bind-value="g.Ocupacion_actual">
+    </div>
+
+    <div class="form-group">
+        <label for="">Telefono</label>
+        <input type="number" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" @bind-value="g.Telefono_empresa">
+    </div>
+
+    <button type="button" class="btn btn-secondary" @onclick="back">Volver</button>
+    <button type="button" class="btn btn-primary" @onclick="siguiente">Siguiente</button>
+}
+
+@if(cambio == 4)
+{
+
+
+    <h2>Datos eclesiasticos</h2>
+
+    <div class="form-group">
+        <label for="">Fecha de conversión</label>
+        <input type="date" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" @bind-value="g.Fecha_conversion">
+    </div>
+
+    <div class="form-group">
+        <label for="">Fecha de bautismo</label>
+        <input type="date" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" @bind-value="g.Fecha_bautismo">
+    </div>
+
+    <div class="form-group">
+        <label for="">Denominacion a la cual pertenece</label>
+        <select class="form-control" name="" id="" @bind="g.Denominacion_religiosa">
+            <option>Bautista</option>
+            <option>Pentecostal</option>
+            <option>Metodista</option>
+            <option>Católica</option>
+            <option>Presbiteriana</option>
+            <option>Adventista</option>
+            <option>Templo bíblica</option>
+            <option>Menonita</option>
+            <option>Luterana</option>
+            <option>Otra</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="">Nombre de la iglesia a la que asiste actualmente</label>
+        <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" @bind-value="g.Nombre_iglesiaA">
+    </div>
+
+    <div class="form-group">
+        <label for="">Si asiste a esta iglesia por un tiempo menor a un año, ¿dónde se congregaba antes?</label>
+        <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" @bind-value="g.Iglesia_anterior">
+    </div>
+
+    <div class="form-group">
+        <label for="">Nombre del pastor de su iglesia actual</label>
+        <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" @bind-value="g.Nombre_pastorA">
+    </div>
+
+    <div>
+
+        <label for="">¿Has sido disciplinado?</label>
+           <div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="diciradio" id="exampleRadios10" @onclick="disciplinaT">
+            <label class="form-check-label" for="exampleRadios10">
+                Si
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="diciradio" id="exampleRadios11" @onclick="disciplinaF">
+            <label class="form-check-label" for="exampleRadios11">
+                No
+            </label>
+        </div>
+    </div>
+    </div>
+
+    @if(T.disciplinado == true && T.disciplinado2 == false)
+    {
+
+    <div class="form-group">
+        <label for="">¿Cuantas veces?</label>
+        <input type="number" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" min="1" max="200" @bind-value="g.cantidad">
+    </div>
+
+    <div class="form-group">
+        <label for="">Causas</label>
+        <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" @bind-value="g.causa">
+    </div>
+    }
+
+
+
+    <div class="mt-3">
+        <button type="button" class="btn btn-secondary" @onclick="back">Volver</button>
+        <button type="button" class="btn btn-primary" @onclick="siguiente">Siguiente</button>
+    </div>
+}
+
+@if(cambio == 5)
+{
+
+    <label for="">En la actualidad ocupa usted alguna de estas funciones: </label>
+    <div>
+        <ul>
+            <li>
+                Pastor <input type="checkbox" name="" id="" @bind-value="T.ocupa">
+            </li>
+            <li>
+                Anciano <input type="checkbox" name="" id=""  @bind-value="T.ocupa2">
+            </li>
+            <li>
+                Diacono <input type="checkbox" name="" id=""  @bind-value="T.ocupa3">
+            </li>
+            <li>
+                Misionero <input type="checkbox" name="" id=""  @bind-value="T.ocupa4">
+            </li>
+            <li>
+                Lider Escuela Dominical <input type="checkbox" name="" id=""  @bind-value="T.ocupa5">
+            </li>
+            <li>
+                Lider Minist. de Jóvenes <input type="checkbox" name="" id=""  @bind-value="T.ocupa6">
+            </li>
+            <li>
+                Lider Minist. de Caballeros <input type="checkbox" name="" id=""  @bind-value="T.ocupa7">
+            </li>
+            <li>
+                Lider Minist. de Damas <input type="checkbox" name="" id=""  @bind-value="T.ocupa8">
+            </li>
+            <li>
+                Lider Minist. de Níños <input type="checkbox" name="" id=""  @bind-value="T.ocupa9">
+            </li>
+            <li>
+                Lider Minist. de Matrimonios <input type="checkbox" name="" id=""  @bind-value="T.ocupa10">
+            </li>
+            <li>
+                Lider de grupo pequeño (Célula) <input type="checkbox" name="" id=""  @bind-value="T.ocupa11">
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="form-group">
+        <label for="">¿Cuáles son los ministerios en los que ha servido?</label>
+        <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" @bind-value="g.Ministerios_servidos">
+    </div>
+
+    <div class="form-group">
+        <label for="">¿En cuál de estos ministerios considera que tuvo mayor fruto? ¿Por qué?</label>
+        <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" @bind-value="g.Ministerio_fruto">
+    </div>
+
+    <div class="form-group">
+        <label for="">Considerando sus dones y talentos, ¿a qué ministerio cree usted que Dios lo(a) está
+            llamando?</label>
+        <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" @bind-value="g.Ministerio_llamado">
+    </div>
+
+    <div class="form-group">
+        <label for="">¿Qué metas tiene para su vida?</label>
+        <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" @bind-value="g.Metas">
+    </div>
+
+    <div class="form-group">
+        <label for="">¿Cuenta con el respaldo de sus autoridades eclesiásticas para realizar estos estudios?</label>
+            <div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="esturadio" id="exampleRadios12" @onclick="estudioT">
+            <label class="form-check-label" for="exampleRadios12">
+                Si
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="esturadio" id="exampleRadios13" @onclick="estudioF">
+            <label class="form-check-label" for="exampleRadios13">
+                No
+            </label>
+        </div>
+    </div>
+    </div>
+    
+    <button type="button" class="btn btn-secondary" @onclick="back">Volver</button>
+    <button type="button" class="btn btn-primary" @onclick="siguiente">Siguiente</button>
+
+    
+    
+}
+@if(cambio == 6)
+{
+
+    <h2>Datos academicos</h2>
+
+    <div class="form-group">
+        <label for="">Nivel de estudio</label>
+        <select class="form-control" name="" id="" @bind="g.Nivel">
+            <option>Primaria</option>
+            <option>Secundaria</option>
+            <option>Tecnico</option>
+            <option>Grado</option>
+            <option>Postgrado - Maestria</option>
+            <option>Doctorado</option>
+        </select>
+    </div>
+
+
+<div>
+
+        <label for="">¿Alguna vez ha sido expulsado o suspendido de alguna institución?: </label>
+       <div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="instiradio" id="exampleRadios14" @onclick="expulT">
+            <label class="form-check-label" for="exampleRadios1">
+                Si
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="instiradio" id="exampleRadios15" @onclick="expulF">
+            <label class="form-check-label" for="exampleRadios15">
+                No
+            </label>
+        </div>
+    </div>
+    </div>
+
+<div class="form-group">
+  <label for="" class="mt-2">En caso afirmativo,¿porqué razón?</label>
+  <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" @bind-value="g.Razon">
+</div>
+    <button type="button" class="btn btn-secondary" @onclick="back">Volver</button>
+    <button type="button" class="btn btn-success" @onclick="registro">Registrar</button>
+
+}
+</div>
+@code
+{
+    int cambio = 1;
+
+    tictac T = new tictac();
+    almacen g = new almacen();
+
+    private void backmenu()
+    {
+        navi.NavigateTo("/menu");
+    }
+
+    private void back()
+    {
+        Console.WriteLine(T.estudio);
+        if(cambio == 2)
+        {
+            cambio = 1;
+        }
+        else if(cambio == 3)
+        {
+            cambio = 2;
+        }
+        else if(cambio == 4)
+        {
+            cambio =3;
+        }
+        else if(cambio == 5)
+        {
+            cambio = 4;
+        }
+        else if(cambio == 6)
+        {
+            cambio = 5;
+        }
+    }
+
+    private void siguiente()
+    {
+        if(cambio == 1)
+        {
+            cambio = 2;
+        }
+        else if(cambio == 2)
+        {
+            cambio = 3;
+        }
+        else if(cambio == 3)
+        {
+            cambio =4;
+        }else if(cambio == 4)
+        {
+            cambio = 5;
+        }else if(cambio ==5)
+        {
+            cambio =6;
+        }
+    }
+
+    private void registro()
+    {
+        iglesiaContext db = new iglesiaContext();
+
+        analizis();
+
+
+        db.Add(new Integrante{
+            Nombre = g.Nombre,
+            Apellido = g.Apellido,
+            Sexo = g.Sexo,
+            Fecha_nacimiento = g.Fecha_nacimiento.ToShortDateString(),
+            Pais_nacimiento = g.Pais_nacimiento,
+            Ciudad_nacimiento = g.Ciudad_nacimiento,
+            Pais_residencia = g.Pais_residencia,
+            Ciudad_residencia = g.Ciudad_residencia,
+            Direccion = g.Direccion,
+            Telefono = g.Telefono,
+            Celular = g.Celular,
+            Correo = g.Correo,
+            Tipo_documento = g.Tipo_documento,
+            Documento = g.Documento
+
+        });
+        db.SaveChanges();
+        var ID = db.integrantes.OrderBy(b=>b.integranteId).Last();
+
+        if(!T.casado)
+        {
+        db.Add(new Datos_familiares{
+            Estado = g.Estado,
+            Hijos = g.Hijos,
+            Pareja = "ninguna",
+            N_hijos = 0,
+            integranteId = ID.integranteId
+            
+        });
+        }
+        else
+        {
+            db.Add(new Datos_familiares{
+            Estado = g.Estado,
+            Hijos = g.Hijos,
+            Pareja = g.Pareja,
+            N_hijos = g.N_hijos,
+            integranteId = ID.integranteId
+        });
+        }
+
+        db.Add(new Datos_laborales{
+            Profesion = g.Profesion,
+            Empresa_nombre = g.Empresa_nombre,
+            Ocupacion_actual= g.Ocupacion_actual,
+            Telefono = g.Telefono_empresa,
+            integranteId = ID.integranteId
+        });
+
+        db.Add(new Datos_eclesiasticos{
+            Fecha_aceptacion = g.Fecha_aceptacion.ToShortDateString(),
+            Fecha_conversion = g.Fecha_conversion.ToShortDateString(),
+            Fecha_bautismo = g.Fecha_bautismo.ToShortDateString(),
+            Denominacion_religiosa = g.Denominacion_religiosa,
+            Nombre_iglesiaA = g.Nombre_iglesiaA,
+            Nombre_pastorA = g.Nombre_pastorA,
+            Iglesia_anterior = g.Iglesia_anterior,
+            Diciplinado = g.Diciplinado,
+            Funcion_religiosa =g.Funcion_religiosa,
+            Ministerio_fruto = g.Ministerio_fruto,
+            Ministerio_llamado = g.Ministerio_llamado,
+            Ministerios_servidos = g.Ministerios_servidos,
+            Metas = g.Metas,
+            Respaldo_estudios = g.Respaldo_estudios,
+            integranteId = ID.integranteId
+        });
+
+        db.SaveChanges();
+        var EcleId = db.Datos_Eclesiasticos.OrderBy(b=>b.Datos_eclesiasticosId).Last();
+
+        if(T.disciplinado)
+        {
+
+        db.Add(new Datos_eclesiasticos_disciplina{
+            cantidad = g.cantidad,
+            causa = g.causa,
+            Datos_eclesiasticosId = EcleId.Datos_eclesiasticosId
+        });
+        }
+
+        db.Add(new Datos_academicos{
+            Nivel = g.Nivel,
+            Suspendido = g.Suspendido,
+            integranteId = ID.integranteId
+        });
+        db.SaveChanges();
+
+        var expu = db.Datos_Academicos.OrderBy(b=>b.Datos_academicosId).Last();
+        
+        db.Add(new Datos_academicos_razon{
+            Razon = g.Razon,
+            Datos_academicosId = expu.Datos_academicosId
+
+        });
+
+        db.SaveChanges();
+        navi.NavigateTo("/menu");
+    }
+
+    private void analizis()
+    {
+
+        if(T.ocupa)
+        {
+            g.Funcion_religiosa +=  " Pastor ";
+        }
+        else if(T.ocupa2)
+        { 
+            g.Funcion_religiosa += " Anciano ";
+        }
+        else if(T.ocupa3)
+        {
+            g.Funcion_religiosa += " Diacono ";
+        }
+        else if(T.ocupa4)
+        {
+            g.Funcion_religiosa += " Misionero ";
+        }
+        else if(T.ocupa5)
+        {
+            g.Funcion_religiosa += " Lider de Escuela Dominical ";
+        }
+        else if(T.ocupa6)
+        {
+            g.Funcion_religiosa += " Lider de Minist. de Jovenes ";
+        }
+        else if(T.ocupa7)
+        {
+            g.Funcion_religiosa += " Lider de Minist. de Caballeros ";
+        }
+        else if(T.ocupa8)
+        {
+            g.Funcion_religiosa += " Lider de Minist. de Damas" ;
+        }
+        else if(T.ocupa9)
+        {
+            g.Funcion_religiosa += " Lider de Minist. de Niños ";
+        }
+        else if(T.ocupa10)
+        {
+            g.Funcion_religiosa += " Lider de Minist. de Matrimonios ";
+        }
+        else if(T.ocupa11)
+        {
+            g.Funcion_religiosa += " Lider de grupo pequeño ";
+        }
+
+
+    }
+     private void cerrar()
+    {
+        navi.NavigateTo("/");
+    }
+
+    private void EstadoCT()
+    {
+        T.casado = true;
+        g.Estado = "Casado";
+    }
+
+    private void EstadoCF()
+    {
+        T.casado = false;
+        g.Estado ="Soltero";
+    }
+
+    private void HijosT()
+    {
+        T.hijos = true;
+        g.Hijos = "Si";
+    }
+
+    private void HijosF()
+    {
+        T.hijos = false;
+        g.Hijos = "No";
+    }
+
+    private void disciplinaT()
+    {
+        T.disciplinado = true;
+        g.Diciplinado = "Si";
+    }
+
+    private void disciplinaF()
+    {
+        T.disciplinado = false;
+        g.Diciplinado = "No";
+    }
+
+    private void sexoH()
+    {
+        g.Sexo = "M";
+    }
+
+    private void sexoF()
+    {
+        g.Sexo = "F";
+    }
+
+    private void docuC()
+    {
+        g.Tipo_documento = "Cedula";
+    }
+
+    private void docuP()
+    {
+        g.Tipo_documento = "Pasaporte";
+    }
+
+    private void docuD()
+    {
+        g.Tipo_documento = "DNI";
+    }
+
+    private void estudioT()
+    {
+        g.Respaldo_estudios = "Si";
+    }
+
+    private void estudioF()
+    {
+        g.Respaldo_estudios = "No";
+    }
+
+    private void expulT()
+    {
+        g.Suspendido = "Si";
+    }
+
+    private void expulF()
+    {
+        g.Suspendido = "No";
+    }
+}

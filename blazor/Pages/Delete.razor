@@ -1,0 +1,99 @@
+@page "/delete"
+@inject NavigationManager navi
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <img src="../img/foto.jpg" alt="no hay" srcset="" style="width: 4%;">
+    <p>nombre</p>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" @onclick="cerrar">Cerrar sesion <span
+                        class="sr-only"></span></a>
+                </li>
+
+            </ul>
+
+        </ul>
+    </div>
+</nav>
+
+<div class="row mb-2">
+    <div class="col">
+        <div class="input-group ">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="addon-wrapping">Delete</span>
+            </div>
+            <input type="text" class="form-control" placeholder="ID" aria-label="Username"
+                aria-describedby="addon-wrapping" @bind-value="id">
+        </div>
+    </div>
+    <div class="col">
+        <button type="button" class="btn btn-outline-danger" @onclick="eliminar">Eliminar</button>
+        <button type="button" class="btn btn-outline-secondary ml-4" @onclick="back">Volver al menu</button>
+    </div>
+    <div class="col"></div>
+</div>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre completo</th>
+            <th scope="col">Sexo</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Nombre de la iglesia</th>
+            <th scope="col">Denominacion</th>
+            <th scope="col">Profesion</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in db.integrantes.OrderBy(b => b.integranteId).ToList())
+        {
+
+            <tr>
+                <th scope="row">@item.integranteId</th>
+                <td>@item.Nombre @item.Apellido</td>
+                <td>@item.Sexo</td>
+                <td>@item.Correo</td>
+                @foreach (var item2 in db.Datos_Eclesiasticos.OrderBy(b => b.integranteId).ToList())
+                {
+                    <td>@item2.Nombre_iglesiaA</td>
+                    <td>@item2.Denominacion_religiosa</td>
+                }
+                @foreach (var item3 in db.Datos_Laborales.OrderBy(b => b.integranteId).ToList())
+                {
+                    <td>@item3.Profesion</td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@code
+{
+    int id{get;set;}
+    iglesiaContext db = new iglesiaContext();
+
+    private void back()
+    {
+        navi.NavigateTo("/menu");
+    }
+     private void cerrar()
+    {
+        navi.NavigateTo("/");
+    }
+
+    private void eliminar()
+    {
+        foreach(var item in db.integrantes.OrderBy(b=>b.integranteId).ToList())
+        {
+            if(item.integranteId == id)
+            {
+                db.Remove(item);
+                db.SaveChanges();
+                id=0;
+            }
+        }
+    }
+}
